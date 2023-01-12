@@ -1,11 +1,19 @@
-let age: any = 25;
+let greet: Function;
 
-// reverts ts back to js
+greet = () => {
+  console.log("hello again");
+};
 
-let mixed: any[] = [];
+const add = (a: number, b: number, c?: number | string) => {
+  console.log(a + b);
+};
 
-mixed.push(5);
-mixed.push({ name: "mario", age: 5 });
+add(5, 10);
 
-let ninja: { name: any; age: any };
-ninja = { name: "yoshi", age: 25 };
+const minus = (a: number, b: number): number => {
+  return a + b;
+};
+
+let result = minus(10, 7);
+
+
