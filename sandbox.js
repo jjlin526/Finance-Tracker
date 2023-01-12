@@ -1,6 +1,9 @@
-var character = 'louis';
-console.log(character);
-var inputs = document.querySelectorAll('input');
-inputs.forEach(function (input) {
-    console.log(input);
-});
+//type inference
+var character = 'mario';
+var age = 30;
+//character = 20;
+//age = 'hello';
+var circ = function (diam) {
+    return diam * Math.PI;
+};
+//console.log(circ('hello'));

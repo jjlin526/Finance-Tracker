@@ -1,9 +1,13 @@
-const character = 'mario';
+//type inference
+var character = 'mario';
 
-console.log(character);
+var age = 30;
 
-const inputs = document.querySelectorAll('input');
+//character = 20;
+//age = 'hello';
 
-inputs.forEach(input => {
-  console.log(input)
-})
+const circ = (diam: number) => {
+  return diam * Math.PI;
+}
+
+//console.log(circ('hello'));
