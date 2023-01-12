@@ -1,13 +1,26 @@
-//type inference
-var character = 'mario';
+// arrays
 
-var age = 30;
+let names = ["luigi", "mario", "yoshi"];
+names.push("toad");
+//names.push(3);
+//names[0]=true;
 
-//character = 20;
-//age = 'hello';
+let mixed = ["ken", 4, "chun", 8, 9];
 
-const circ = (diam: number) => {
-  return diam * Math.PI;
+mixed.push("ryu");
+mixed[0] = 3;
+
+// objects
+let ninja = {
+  name: "mario",
+  belt: "black",
+  age: 30,
+};
+
+//ninja.skills = ['fighting', 'sneaking']
+
+ninja = {
+  name: 'yoshi',
+  belt: 'orange',
+  age: 40,
 }
-
-//console.log(circ('hello'));
