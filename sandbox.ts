@@ -1,31 +1,11 @@
-// explicit types
+let age: any = 25;
 
-let character: string;
-let age: number;
-let isLoggedIn: boolean;
+// reverts ts back to js
 
-//age = 'luigi';
+let mixed: any[] = [];
 
-// arrays
+mixed.push(5);
+mixed.push({ name: "mario", age: 5 });
 
-let ninjas: string[] = [];
-
-// union types
-let mixed: (string|number)[] = [];
-
-mixed.push('hello');
-mixed.push(20);
-//mixed.push(false);
-
-let uid: string|number;
-
-// objects
-
-let ninja: object;
-ninja = {name:'yoshi',age:30};
-
-let ninjaTwo: {
-  name: string,
-  age: number,
-  beltColour: string
-}
+let ninja: { name: any; age: any };
+ninja = { name: "yoshi", age: 25 };
