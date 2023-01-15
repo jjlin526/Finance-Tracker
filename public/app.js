@@ -1,20 +1,6 @@
 import { Invoice } from "./classes/Invoice.js";
+import { ListTemplate } from "./classes/ListTemplate.js";
 import { Payment } from "./classes/Payment.js";
-// const me: isPerson = {
-//   name: "jonathan",
-//   age: 22,
-//   speak(text: string): void {
-//     console.log(text);
-//   },
-//   spend(amount: number): number {
-//     console.log(`I spent ${amount}`);
-//     return amount;
-//   },
-// };
-// const greetPerson = (person: isPerson) => {
-//   console.log("hello", person.name);
-// };
-// console.log(me);
 const invOne = new Invoice("mario", "work on the mario website", 250);
 const invTwo = new Invoice("luigi", "work on the luigi website", 300);
 let invoices = [];
@@ -30,6 +16,9 @@ const type = document.querySelector("#type");
 const tofrom = document.querySelector("#tofrom");
 const details = document.querySelector("#details");
 const amount = document.querySelector("#amount");
+// list template instance
+const ul = document.querySelector('ul');
+const list = new ListTemplate(ul);
 form.addEventListener("submit", (e) => {
     e.preventDefault();
     let doc;
@@ -39,5 +28,5 @@ form.addEventListener("submit", (e) => {
     else {
         doc = new Payment(tofrom.value, details.value, amount.valueAsNumber);
     }
-    console.log(doc);
+    list.render(doc, type.value, 'end');
 });

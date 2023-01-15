@@ -1,4 +1,5 @@
 import { Invoice } from "./classes/Invoice.js";
+import { ListTemplate } from "./classes/ListTemplate.js";
 import { Payment } from "./classes/Payment.js";
 import { HasFormatter } from "./interfaces/HasFormatter.js";
 
@@ -22,24 +23,6 @@ interface isPerson {
   spend(a: number): number;
 }
 
-// const me: isPerson = {
-//   name: "jonathan",
-//   age: 22,
-//   speak(text: string): void {
-//     console.log(text);
-//   },
-//   spend(amount: number): number {
-//     console.log(`I spent ${amount}`);
-//     return amount;
-//   },
-// };
-
-// const greetPerson = (person: isPerson) => {
-//   console.log("hello", person.name);
-// };
-
-// console.log(me);
-
 const invOne = new Invoice("mario", "work on the mario website", 250);
 const invTwo = new Invoice("luigi", "work on the luigi website", 300);
 
@@ -60,6 +43,11 @@ const tofrom = document.querySelector("#tofrom") as HTMLInputElement;
 const details = document.querySelector("#details") as HTMLInputElement;
 const amount = document.querySelector("#amount") as HTMLInputElement;
 
+// list template instance
+
+const ul = document.querySelector('ul')!;
+const list = new ListTemplate(ul);
+
 form.addEventListener("submit", (e: Event) => {
   e.preventDefault();
 
@@ -70,5 +58,5 @@ form.addEventListener("submit", (e: Event) => {
     doc = new Payment(tofrom.value, details.value, amount.valueAsNumber);
   }
 
-  console.log(doc);
+  list.render(doc, type.value, 'end');
 });
