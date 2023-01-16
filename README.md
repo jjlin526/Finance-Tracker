@@ -1,1 +1,1 @@
-# Finance Tracker
+# 💰 Finance Tracker
